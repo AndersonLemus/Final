@@ -1,0 +1,101 @@
+{% extends 'app/base.html' %}
+
+{% block extrahead %}
+<title>Nueva ciudad</title>
+{% endblock extrahead%}
+
+{% block content %}
+<div classs="card">
+    <h2>Listado De Ciudades</h2>
+</div>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Año</th>
+            <th>Dias</th>
+            <th>Calificacion</th>
+            <th>Opciones</th>
+        </tr>
+        {% for p in ciudades %}
+        <tr>
+            <td>{{ p.nombre | title}}</td>
+            <td>{{ p.descripcion | title}}</td>
+            <td>{{ p.año | title}}</td>
+            <td>{{ p.dias | title}}</td>
+            <td>{{ p.calificacion | title}}</td>
+            <td>
+                <a href="{% url 'modificar_ciudad' p.id %}" class="button">Modificar</a>
+                <a href="{% url 'eliminar_ciudad' p.id %}" class="button">Eliminar</a>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins', sans-serif;
+        }
+        body {
+        font-family: sans-serif;
+        font-size: 16px;
+        background-color: #000000;
+        }
+
+        section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            background-color: black;
+        }
+
+        .form-box{
+            position: relative;
+            width: 700px;
+            height: 650px;
+            background: transparent;
+            border: 2px solid rgba(255,255,255,0.5);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2{
+            font-size: 2em;
+            color: #fff;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 2px solid #fff;
+            padding: 10px;
+            text-align: left;
+            color: #fff;
+        }
+
+        th {
+            background-color: #555;
+        }
+
+        tr:nth-child(even) {
+            background-color: #333;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #555;
+        }
+    </style>
+
+{% endblock content %}

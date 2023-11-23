@@ -1,0 +1,126 @@
+{% extends 'app/base.html' %}
+
+{% block extrahead %}
+<title>Ciudades</title>
+{% endblock extrahead %}
+aquí estámos en ciudades 
+{% block content %}
+  <main>
+    <section class="intro-section">
+      <div class="intro-container">
+        <div class="intro-left">
+          <h1><strong><em>Eres viajero?...</em></strong></h1>
+          <div class="earth"></div>
+        </div>
+        <div class="additional-text">
+          <p><strong><em>
+            Si eres un viajero que pasa de ciudad en ciudad o simplemente una persona que quiere tener un registro de los lugares en los que ha estado, esta página es para ti. En ella podrás crear una lista con cada uno de los lugares en los que has estado y describir tu experiencia para que tus recuerdos perduren para siempre.
+          </em></strong></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <!-- <footer>
+    <p>Copyright © 2023</p>
+  </footer> -->
+  <style>
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  background-color: #000000;
+}
+.intro-section {
+  display: flex;
+  align-items: center;
+}
+
+.intro-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.intro-left {
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  font-size: 72px;
+  margin-right: 20px;
+  color: white;
+}
+
+.earth {
+  perspective: 400vmin;
+  transform-style: preserve-3d;
+  width: 420px;
+  height: 420px;
+  margin-right: 20px;
+  position: relative;
+}
+
+.additional-text p {
+  font-size: 16px;
+  text-align: left;
+  max-width: 400px; 
+  color: white;
+  /* Ajusta el ancho máximo del texto de la derecha según sea necesario */
+}
+
+/* Otros estilos... */
+
+.earth::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 50%; /* Coloca la earth en el centro vertical */
+  left: 100%; /* Coloca la earth en el centro horizontal */
+  transform: translate(-50%, -50%); /* Ajusta la posición al centro exacto */
+  background: url(https://codetheworld.io/wp-content/uploads/2023/11/MWLpKEZ_Earth.jpeg) repeat-x;
+  box-shadow: -80px -15px 80px 10px #000000E6 inset, -10px 0px 15px -7px #f0df1759;
+  background-size: cover;
+  border-radius: 50%;
+  animation: rotate 24s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 1200px 0px;
+  }
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: #ccc;
+  padding: 20px;
+}
+
+
+  </style>
+{% endblock content %}
